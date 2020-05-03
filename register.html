@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-database.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+    body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+    .w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+    .fa-anchor,.fa-coffee {font-size:200px}
+    </style>
+<body> 
+      <!-- Navbar -->
+<div class="w3-top">
+    <div class="w3-bar w3-red w3-card w3-left-align w3-large">
+      <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+      <a href="welcome.html" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
+      <a href="started.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Register</a>
+      <a href="login.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Login</a>
+      <a href="about.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">About</a>
+    </div>
+  </div>
+  <h1 class="w3-container w3-red w3-center" style="padding:50px 16px"> REGISTRATION FORM </h1>   
+  <div style="background-image:url('backgroundreg.jpg')">
+    <div class="w3-third">
+        <img src="volunteer.jpg" style="width: 100%; height: 800px;"/>
+    </div>   
+    <form name="RegForm" style="text-align: center;" onsubmit="return GEEKFORGEEKS()" method="post" id='RegForm'>  
+          
+        <p>Name: <input type="text" size=20 name="Name" id="name"> </p><br>
+        <p>Father's Name: <input type="text" size=20 name="fName" id="fname"> </p><br>
+        <p>E-mail Address: <input type="text" size=20 name="EMail" id="email">  </p><br> 
+         <p>Password: <input type="text" size=20 name="Password" id="password"> </p><br> 
+        <p>Telephone: <input type="text" size=20 name="Telephone" id="telephone"> </p><br>   
+               
+        <p>SELECT YOUR STATE    
+            <select type="text" value="" name="State" id="state">
+                <option>Choose state</option>
+                <script>
+                 var myArray = ["Andhra Pradesh","Arunachal Pradesh","Assam","Bihar","Chhattisgarh","Goa","Gujarat","Haryana","HimachalPradesh","Jharkhand","Karnataka","Kerala","Madhya Pradesh","Maharashtra","Manipur","Meghalaya","Mizoram","Nagaland","Odisha","Punjab","Rajasthan","Sikkim","Tamil Nadu","Telangana","Tripura","Uttarakhand","Uttar Pradesh","West Bengal","Chandigarh","Delhi","Jammu & Kashmir","Ladakh","Lakshadweep","Puducherry"];
+                    for(i=0; i<myArray.length; i++) {  
+             document.write('<option value="' + myArray[i] +'">' + myArray[i] + '</option>');
+            }
+            </script>
+            </select></p><br><br> 
+            <p>City: <input type="text" size=20 name="city" id="city"> </p><br>
+           <p>Select Your Qualification:</p>
+           <select type="text" value="" name="qual" id="qual">
+               <option>none</option>
+               <option>Diploma</option>
+               <option>Graduate</option>
+               <option>Post graduate</option>
+           </select>
+           <p>Enter your qualification name: <input type="text" size=20 name="qname" id="qname"> </p><p style="color: red; font-size: small;">e.g. b.sc(med), mbbs, bms etc.</p><br>
+        <p><input type="submit" onclick="location.href='confirmation.html';" style="background-color: red; padding: 7px; color: white; font-size: 16px; width: 200px;" value="send" name="Submit" id='submit'>
+        </p>      
+    </div>    
+    </form> 
+  <script src="store_data.js"></script>
+    </body>
+    <script> 
+        function GEEKFORGEEKS()                                    
+        { 
+            var name = document.forms["RegForm"]["Name"];  
+            var fname = document.forms["RegForm"]["fName"];               
+            var email = document.forms["RegForm"]["EMail"];    
+            var phone = document.forms["RegForm"]["Telephone"];  
+            var what =  document.forms["RegForm"]["State"]; 
+            var qual =  document.forms["RegForm"]["qual"]; 
+            var qname =  document.forms["RegForm"]["qname"]; 
+            var city =  document.forms["RegForm"]["city"];  
+            var password = document.forms["RegForm"]["Password"];  
+            var degree= document.forms["RegForm"]["img"];
+            var phoneno = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+            var ema=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            if (name.value == "")                                  
+            { 
+                window.alert("Please enter your name."); 
+                name.focus(); 
+                return false; 
+            } 
+               
+            if (!(email.value.match(ema)))                                   
+            { 
+                window.alert("Please enter a valid e-mail address."); 
+                email.focus(); 
+                return false; 
+            } 
+           
+            if (!(phone.value.match(phoneno)))                           
+            { 
+                window.alert("Please enter your valid telephone number."); 
+                phone.focus(); 
+                return false; 
+            } 
+            if (password.value == "")                        
+            { 
+                window.alert("Please enter your password"); 
+                password.focus(); 
+                return false; 
+            } 
+            if (qname.value == "")                        
+            { 
+                window.alert("Please enter your qualification name"); 
+                password.focus(); 
+                return false; 
+            } 
+            if (what.selectedIndex < 1)                  
+            { 
+                alert("Please enter your stae."); 
+                what.focus(); 
+                return false; 
+            } 
+            if (city.value == "")                                  
+            { 
+                window.alert("Please enter your city."); 
+                name.focus(); 
+                return false; 
+            } 
+            if (qual.selectedIndex < 1)                  
+            { 
+                alert("Please enter your course."); 
+                what.focus(); 
+                return false; 
+            } 
+           
+            return true; 
+        }</script> 
+    </html>

@@ -1,0 +1,44 @@
+#first{
+    background-color:black;
+    color: white;
+    text-align: center;
+    font-size: 60px;
+    font-family: sans-serif;
+    font-weight: lighter;
+    text-indent: 30px;
+}
+a{
+    
+    background-color:gray;
+    font-size: 30px;
+    display: inline;
+    color: white; 
+    text-decoration: double;
+    text-align: right;
+    border: 2px solid grey ;
+}
+GEEKFORGEEKS {                                         
+    margin-left: 70px; 
+    font-weight: bold ; 
+    float: left; 
+    clear: left; 
+    width: 100px; 
+    text-align: left; 
+    margin-right: 10px; 
+    font-family:sans-serif,bold, Arial, Helvetica; 
+    font-size:14px; 
+} 
+   
+div {  
+    box-sizing: border-box; 
+    width: 100%; 
+    border: 100px solid black; 
+    float: left; 
+    align-content: center; 
+    align-items: center; 
+} 
+   
+form {                                         
+    margin: 0 auto; 
+    width: 600px; 
+} 

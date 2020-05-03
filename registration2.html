@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<head>
+	<title>REGISTRATION FORM</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="style.css">
+	<script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-analytics.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-database.js"></script>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+	<body>
+		      <!-- Navbar -->
+<div class="w3-top">
+    <div class="w3-bar w3-red w3-card w3-left-align w3-large">
+      <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+      <a href="welcome.html" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
+      <a href="started.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Register</a>
+      <a href="login.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Login</a>
+      <a href="about.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">About</a>
+    </div>
+  </div>
+		<h1 class="w3-container w3-red w3-center" style="padding:50px 16px">REGISTRATION FORM</h1>
+		<div class=" w3-light-grey w3-padding-64 w3-container" style="background-image:url('backgroundreg.jpg')">
+			<h1>Register Hospital Here to get volunteers</h1>
+			<div class="w3-third">
+				<img src="hospital.jpg" style="width: 100%; height: 500px;"/>
+			</div>
+			<form name="hostform" style="text-align: center;" onsubmit="return myfuc()" method="post" id="hostform">  
+			<label>NAME :</label>
+			<input type="text" name="name" id="name" placeholder="NAME OF THE HOSPITAL"><br><br>
+			<label>ADDRESS :</label>
+			<input type="text" name="adress" id="address" placeholder="ADDRESS OF THE HOSPITAL"><br><br>
+			<label>CONTACT INFO :</label>
+			<select id="ph">
+				<option>+91</option>
+			</select>
+			<input type="number" name="phno." id="mno" placeholder="CONTACT DETAIL OF THE HOSPITAL"><br><br>
+			<p>SELECT YOUR STATE    
+				<select type="text" value="" name="state" id="state">
+					<option>Choose state</option>
+					<script>
+					 var myArray = ["Andhra Pradesh","Arunachal Pradesh","Assam","Bihar","Chhattisgarh","Goa","Gujarat","Haryana","HimachalPradesh","Jharkhand","Karnataka","Kerala","Madhya Pradesh","Maharashtra","Manipur","Meghalaya","Mizoram","Nagaland","Odisha","Punjab","Rajasthan","Sikkim","Tamil Nadu","Telangana","Tripura","Uttarakhand","Uttar Pradesh","West Bengal","Chandigarh","Delhi","Jammu & Kashmir","Ladakh","Lakshadweep","Puducherry"];
+						for(i=0; i<myArray.length; i++) {  
+				 document.write('<option value="' + myArray[i] +'">' + myArray[i] + '</option>');
+				}
+				</script>
+				</select></p><br><br> 
+			<label>ACTIVE CASES :</label>
+			<input type="NUMBER" name="number" id="count" placeholder="CURRENT COUNT OF ACTIVE CASES IN THE HOSPITAL"><br><br>
+			<label>EMAIL ID :</label>
+			<input type="EMAIL" name="email" id="email" placeholder="EMAIL-ID OF THE HOSPITAL"><br><br>
+			<label>PASSWORD :</label>
+			<input type="password" name="pass" id="pass" placeholder="PASSOWORD"><br><br>
+			<label>RE-ENTER PASSWORD :</label>
+			<input type="passowrd" name="pass" id="pass" placeholder=" PASSWORD"><br><br>
+			<button type="submit" onclick="location.href='confirmation.html';">submit</button>
+			</form>
+			</div>
+			<script src="reg2store_data.js"></script>
+			</body>
+			<script>
+				function myfuc(){
+
+				}
+			</script>
+			</html>
+			
